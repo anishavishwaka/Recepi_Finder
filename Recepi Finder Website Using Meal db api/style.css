@@ -1,0 +1,240 @@
+:root{
+    --light-color:#fff;
+    --dark-color:#282828;
+    --header-height:70px;
+    --search-height:50px;
+    --border-color:#ccc
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--light-color);
+}
+header{
+    height: var(--header-height);
+    width: 100vw;
+    background: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--light-color);
+    gap: 10px;
+    padding-right: 30px;
+    
+}
+
+header img{
+    filter: invert(1);
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--search-height);
+    gap: 10px;
+    box-shadow: 0px 2px 8px 0px var(--border-color);
+    
+}
+.search input[type="text"]{
+    padding: 8px 10px;
+    line-height: 1.5px;
+    font-size: 1rem;
+    border: none;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid transparent;
+    outline: none;
+    transition: all 200ms ease-in-out;
+    width: 60%;
+
+}
+.search input[type="text"]:focus{
+    border-left-color:transparent;
+    border-bottom-color: var(--border-color);
+    width: 61%;
+}
+.btns{
+    padding: 8px 10px;
+    background: transparent;
+    border-radius: 2px;
+    user-select: none;
+    font-size: 1rem;
+    border: 1px solid #007bff;
+    cursor: pointer;
+}
+.btns:hover{
+    background: #007bff;
+    border-color: var(--dark-color);
+    color: var(--light-color);
+}
+i.fa-solid{
+    position: absolute;
+    left: 75%;
+    top: 90px;
+    cursor: pointer;
+    color: gray;
+    font-size: 20px;   
+}
+/*main section*/
+.recepi-container{
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+
+.recepi{
+    background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(78, green, blue, alpha);
+    cursor: pointer;
+    min-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+.recepi:hover{
+    transform: scale(1.02);
+
+}
+ .recepi img{
+    height: 300px;
+ }
+
+ .recepi h3{
+    font-size: 24px;
+    margin-block: 5px;
+ }
+
+ .recepi p{
+    font-size: 20px;
+    color: white;
+ }
+
+ .recepi span{
+    font-weight: bold;
+ }
+ .recepi button{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: #f44336;
+    color: white;
+    border: none;
+ }
+
+ .recepiDetails{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    background-color: aquamarine;
+    border-radius: 12px;
+    width: 40%;
+    height: 80%;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+}
+
+
+.recepi-details-content{
+    padding: 30px;
+
+}
+.recepi-details-content  img{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.recepi-details-content  a{   
+    display: block;
+    text-align: center;
+}
+.recepiName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+
+.IngredientList{
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+.recepi-Close-btn{
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.instructions p {
+    line-height: 30px;
+    white-space: pre-line;
+}
+.recepi-details::-webkit-scrollbar{
+    width: 10px;
+}
+.recepi-details::-webkit-scrollbar-thumb{
+    background-color: #b5b5b5;
+    border-radius: 16px;
+    --webkit-border-radius:16px;
+}
+
+
+/*body scroll bar*/
+body::-webkit-scrollbar{
+    width: 16px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #b5b5b5;
+}
+
+body::-webkit-scrollbar-track{
+    background-color:#ebebeb;
+}
+
+
+@media screen and (max-width) {
+    header nav{
+        flex-direction: column;
+    }
+    header nav  form{
+        width: 80%;
+        margin-top: 20px;
+    }
+    
+}
+
